@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Notiflix from 'notiflix';
 import { nanoid } from 'nanoid';
-import {Section} from './App.styled'
+import { Section } from './App.styled'
 import { Formes } from './FormSection/Form';
 import { Filter } from './FilterSection/Filter';
 import { Renderlist } from './ListContact/ListContact';
 import { ContactList } from './ListContact/ListContact.styled';
 
-export class Phonebook extends Component {
+export class App extends Component {
   state = {
     contact: [],
     filter: '',
