@@ -12,7 +12,7 @@ export class App extends Component {
     contact: [],
     filter: '',
   };
-
+  
   hendleSubmit = ({ name, number }) => {
     const { contact } = this.state;
     const item = {
@@ -20,7 +20,11 @@ export class App extends Component {
       name: name,
       number: number,
     };
-    if (!contact.map(item => item.name).includes(name)) {
+
+    const inContact = contact.find()
+    console.log(inContact);
+
+    if (inContact) {
       this.setState(({ contact }) => ({
         contact: [item, ...contact],
       }));
