@@ -21,16 +21,18 @@ export class App extends Component {
       number: number,
     };
 
-    const inContact = contact.find()
-    console.log(inContact);
+    const inContact = contact.find(item => item.name === name)
 
-    if (inContact) {
-      this.setState(({ contact }) => ({
+
+    if (!inContact) {
+      return this.setState(({ contact }) => ({
         contact: [item, ...contact],
-      }));
-    } else {
-      Notiflix.Notify.warning(`${name} is already is contacts`);
+      }))
     }
+       Notiflix.Notify.warning(`${name} is already is contacts`)
+
+    
+    
   };
   removeBtn = e => {
     const { contact } = this.state;
